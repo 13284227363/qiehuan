@@ -8,21 +8,25 @@
 </head>
 <body>
 <div id="app">
-    <div class="box" >
+    <div class="box">
         <div class="header">
             <div class="nav2">
-                <img :src="navtwo" alt="">
+                <img :src="navtwo" @click="clic" :class="{navss:isNavtow}" alt="">
             </div>
             <div class="nav1">
-                <img :src="navone" alt="">
+                <img :src="navone" @click="clicked" :class="{navs:isNavone}" alt="">
             </div>
         </div>
 
-        <div class="content">
+        <div :class="con">
             <div class="logo" v-for="item in array">
-                <img :src="item.image" alt="">
+                <a :href="item.url">
+                    <img :src="item.image" alt="">
+                </a>
+                <p v-show="titles">{{item.title}}</p>
             </div>
         </div>
+
     </div>
 
 </div>
@@ -30,8 +34,13 @@
     new Vue({
         el:'#app',
         data:{
+            isNavone:true,
+            isNavtow:false,
+            con:'list',
             navone:'img/grade.png',
             navtwo:'img/list.png',
+            isShow:false,
+            titles: true,
             array :[{
                 "title": "What You Need To Know About CSS Variables",
                 "url": "http://tutorialzine.com/2016/03/what-you-need-to-know-about-css-variables/",
@@ -62,6 +71,14 @@
                     "url": "http://tutorialzine.com/2015/12/creating-your-first-desktop-app-with-html-js-and-electron/",
                     "image": 'https://tutorialzine.com/media/2015/12/creating-your-first-desktop-app-with-electron.png'
                 }]
+        },
+        methods:{
+            clicked:function () {
+              this.con = 'list'
+            },
+            clic:function () {
+                this.con = 'content'
+            }
         }
 
     })

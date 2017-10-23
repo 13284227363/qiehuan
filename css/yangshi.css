@@ -36,20 +36,47 @@
     box-sizing: border-box;
     padding-left: 10px;
 }
-.logo{
+.content .logo{
     width: 175px;
     overflow: hidden;
     float: left;
     line-height: 0px;
     margin-bottom:2px;
 }
-.logo img{
+.content .logo img{
     width: 180%;
     height: 175px;
     position: relative;
     left: -40%;
 }
-.logo:nth-of-type(2n+1){
+.content .logo:nth-of-type(2n+1){
     margin-right: 2px;
+}
+.list{
+    width: 375px;
+    margin:0 auto;
+    padding:  15px 30px 30px 30px;
+    box-sizing: border-box;
+}
+.list .logo{
+    border-bottom: 1px solid rgb(200,200,200);
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-top: 8px;
+}
+.list .logo img{
+    width: 80px;
+    height: 80px;
+}
+.list p{
+    font-size: 12px;
+    display: inline-block;
+    width: 210px;
+    padding-left: 10px;
+    position: relative;
+    bottom:25px;
+}
 
+.navss{
+    background-color: red;
 }
